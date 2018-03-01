@@ -31,6 +31,9 @@
 	.selector {
 		color: steelblue
 	}
+	.default-content, .left-content, .middle-content, .right-content {
+		font-size: 30px;
+	}
 </style>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -49,15 +52,17 @@
 				<h1>Toggle Content</h1>
 				<hr>
 				<h3>Logic</h3>
+
+				<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><span>&nbsp;</span> All show and hide functions are selected based on class names</div>
+
 				<ul>
-					<li>Include jQuery Library</li>
-					<li>Default content is shown</li>
+					<li>Include <a href="https://developers.google.com/speed/libraries/">jQuery Library</a> (I in this example I am using a google CDN link)</li>
+					<li>Default content is shown and button content hidden using an inline CSS when the page is loaded
 					<li>On button click<br>
-						<ol>
-							<li>Hide Default content</li>
-							<li>Hide content for the buttons that were not clicked</li>
-							<li>Show content for the button hat was clicked</li>
-						</ol>
+						<ul>
+							<li>Hide content for the buttons that were not clicked as well as the default content</li>
+							<li>Show content for the button that was clicked</li>
+						</ul>
 					</li>
 					<li>On Reset click<br>
 						<ul>
@@ -94,35 +99,35 @@
 						<blockquote>
 							$(<span class="selector">document</span>).ready(<span class="function">function</span>(){<br>
 								<span class="comment"><span class="tab"></span>// Button Left<br></span>
-								<span class="tab"></span>$("<span class="selector">.button-left"</span>).click(<span class="function">function</span>(){<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.default-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.middle-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.right-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.left-content"</span>).show();<br>
+								<span class="tab"></span>$(<span class="selector">".button-left"</span>).click(<span class="function">function</span>(){<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".default-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".middle-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".right-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".left-content"</span>).show();<br>
 								<span class="tab"></span>});<br><br>
 
 								<span class="comment"><span class="tab"></span>// Button Middle<br></span>
-								<span class="tab"></span>$("<span class="selector">.button-middle"</span>).click(<span class="function">function</span>(){<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.default-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.left-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.right-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.middle-content"</span>).show();<br>
+								<span class="tab"></span>$(<span class="selector">".button-middle"</span>).click(<span class="function">function</span>(){<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".default-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".left-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".right-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".middle-content"</span>).show();<br>
 								<span class="tab"></span>});<br><br>
 
 								<span class="comment"><span class="tab"></span>// Button Right<br></span>
-								<span class="tab"></span>$("<span class="selector">.button-right"</span>).click(<span class="function">function</span>(){<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.default-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.left-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.middle-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.right-content"</span>).show();<br>
+								<span class="tab"></span>$(<span class="selector">".button-right"</span>).click(<span class="function">function</span>(){<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".default-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".left-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".middle-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".right-content"</span>).show();<br>
 								<span class="tab"></span>});<br><br>
 
 								<span class="comment"><span class="tab"></span>// Default<br></span>
-								<span class="tab"></span>$("<span class="selector">.button-default"</span>).click(<span class="function">function</span>(){<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.left-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.middle-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.right-content"</span>).hide();<br>
-								    <span class="tab"></span><span class="tab"></span>$("<span class="selector">.default-content"</span>).show();<br>
+								<span class="tab"></span>$(<span class="selector">".button-default"</span>).click(<span class="function">function</span>(){<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".left-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".middle-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".right-content"</span>).hide();<br>
+								    <span class="tab"></span><span class="tab"></span>$(<span class="selector">".default-content"</span>).show();<br>
 								<span class="tab"></span>});<br>
 							});
 						</blockquote>
@@ -164,10 +169,10 @@
 					});
 				</script>
 				<h3>Example</h3>
-				<button type="button" class="btn btn-default button-default">Reset</button>
-				<button type="button" class="btn btn-default button-left">Left</button>
-				<button type="button" class="btn btn-default button-middle">Middle</button>
-				<button type="button" class="btn btn-default button-right">Right</button>
+				<button type="button" class="btn btn-default button-default">Reset Button</button>
+				<button type="button" class="btn btn-default button-left">Left Button</button>
+				<button type="button" class="btn btn-default button-middle">Middle Button</button>
+				<button type="button" class="btn btn-default button-right">Right Button</button>
 				<hr>
 				<p class="default-content">Default Content</p>
 				<p style="display: none;" class="left-content">Left Button Content</p>
